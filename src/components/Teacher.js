@@ -1,10 +1,7 @@
 import React from "react";
-//import { format } from 'date-fns/esm'
+import * as PropTypes from "prop-types";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import * as PropTypes from "prop-types";
-
-//import interactionPlugin from '@fullcalendar/interaction' // needed for dayClick
 
 const Teacher = props => {
     let calendarComponentRef = React.createRef();
@@ -23,7 +20,6 @@ const Teacher = props => {
                 weekends={true}
                 events={props.events}
                 eventClick = {handleEventClick}
-                //dateClick={handleDateClick(props.events)}
             />
         </div>
     )
@@ -35,16 +31,6 @@ const handleEventClick = (arg) => {
         alert(`${arg.event.title}`);
     }
 };
-
-// const handleDateClick = (arg) => {
-//     this.setState({  // add new event data
-//         calendarEvents: this.state.calendarEvents.concat({ // creates a new array
-//             title: 'New Event',
-//             start: arg.date,
-//             allDay: arg.allDay
-//         })
-//     })
-// };
 
 Teacher.propTypes = {
     events: PropTypes.arrayOf(PropTypes.object),

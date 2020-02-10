@@ -17,24 +17,28 @@ ol.main-user-menu{
   margin: 20px 0;
   border-bottom: 1px solid #ccc;
   padding-left: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    margin: 0 10px;
+    font-size: 14px;
+    border-bottom: 3px solid #ddd;
+
+    &:hover{
+      text-decoration: none;
+      color: cornflowerblue;
+      cursor: pointer;
+    }
+
+    &:hover a, &:focus a{
+      text-decoration: none;
+    }
+
+    &.active-menu-item {
+      border-bottom: 3px solid #67A3C7;
+    }
+  }
 }
-ol.main-user-menu li {
-  list-style: none;
-  display: inline-block;
-  float: left;
-  margin: 0 10px;
-  font-size: 14px;
-  border-bottom: 3px solid #ddd;
-}
-ol.main-user-menu li.active-menu-item {
-  border-bottom: 3px solid #67A3C7;
-}
-ol.main-user-menu li:hover{
-  text-decoration: none;
-  color: cornflowerblue;
-  cursor: pointer;
-}
-ol.main-user-menu li a:hover,
-ol.main-user-menu li a:focus{
-  text-decoration: none;
-}
+
